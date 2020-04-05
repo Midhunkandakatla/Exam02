@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Kandakatla_Exam_02.Models.Insurance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InsuranceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurancePhoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsuranceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsurancePhoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InsuranceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InsuranceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InsuranceID })
+        </td>
+    </tr>
+}
+
+</table>
